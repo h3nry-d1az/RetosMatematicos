@@ -105,15 +105,21 @@
 \cfoot{\thepage}
 \renewcommand{\headrulewidth}{0pt}
 
-%%%%% Cuerpo del documento, ejercicio, forma, énfasis y resolutores
-\newcommand{\documento}[1]{
-\begin{document}
-    \maketitle
-    \thispagestyle{empty}
-    #1
-\end{document}
-}
+%%%%% Detalles tipográficos: separación entre títulos, no indentar notas a pie de página...
+\RequirePackage{titlesec}
+\titlespacing{\section}{0pt}{12pt}{8pt}
+\RequirePackage{titling}
+\preauthor{}
+\postauthor{}
 
+\makeatletter
+\renewcommand\@makefntext[1]{%
+\setlength\parindent{1em}%
+\noindent
+\makebox[0.7em][r]{\textsuperscript{\@thefnmark}~}{#1}}
+\makeatother
+
+%%%%% Enunciado del reto, forma de resolverlo, énfasis y resolutores del problema
 \newcommand{\ejercicio}[2]{
 \begin{cajaejercicio}
 \noindent\textbf{Ejercicio:} #1
@@ -140,16 +146,100 @@
 \noindent {\color{verdeodi}\sf Resuelto por {#1}\!\!.}
 }
 
-%%%%% Detalles tipográficos: separación entre títulos, no indentar notas a pie de página...
-\RequirePackage{titlesec}
-\titlespacing{\section}{0pt}{12pt}{8pt}
-\RequirePackage{titling}
-\preauthor{}
-\postauthor{}
+%%%%% Pies de figuras y tablas
+\RequirePackage[
+	format=plain,
+	labelformat=simple,
+	labelsep=period,
+	font={color=verdeodi,sf},
+	labelfont=bf,
+	centerlast]{caption}
+\renewcommand\thefigure{\arabic{figure}}
+\renewcommand\thetable{\arabic{table}}
+\renewcommand{\tablename}{Tabla} 
+\newenvironment{Figura}
+{\par\medskip\noindent\minipage{\linewidth}}{\endminipage\par\medskip}
 
-\makeatletter
-\renewcommand\@makefntext[1]{%
-\setlength\parindent{1em}%
-\noindent
-\makebox[0.7em][r]{\textsuperscript{\@thefnmark}~}{#1}}
-\makeatother
+%%%%% Fragmentos de código
+\def\OpcionMinted{minted}
+\def\OpcionVerbatim{verbatim}
+
+\ifx\ProblemaResaltado\OpcionMinted
+\RequirePackage{minted}
+\newenvironment{codigo}[1]
+ {\VerbatimEnvironment
+  \begin{minted}[
+    % frame=lines,
+    escapeinside=||,
+	mathescape,
+	linenos=true]{#1}}
+ {\end{minted}}
+\else\ifx\ProblemaResaltado\OpcionVerbatim
+\RequirePackage{fancyvrb}
+\DefineVerbatimEnvironment{codigo}{Verbatim}{
+	% frame=lines,
+	numbers=left,}
+\fi\fi
+
+%%%%% Teoremas, lemas y demás entornos matemáticos, así como comandos y operadores varios
+\RequirePackage{amsmath}
+\RequirePackage{amssymb}
+\RequirePackage{amsthm}
+
+\newtheorem{theorem}{Teorema}
+\newtheorem*{theorem*}{Teorema}
+\newtheorem{lemma}{Lema}
+\newtheorem*{lemma*}{Lema}
+\newtheorem{proposition}{Proposición}
+\newtheorem*{proposition*}{Proposición}
+\newtheorem{corollary}{Corolario}
+\newtheorem*{corollary*}{Corolario}
+\theoremstyle{definition}
+\newtheorem{definition}{Definición}
+\newtheorem*{definition*}{Definición}
+
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+
+\DeclareMathOperator{\proy}{proy}
+\DeclareMathOperator{\grado}{grado}
+
+\DeclareMathOperator{\Ch}{Ch}
+\DeclareMathOperator{\Sh}{Sh}
+\DeclareMathOperator{\Res}{Res}
+\DeclareMathOperator{\Vol}{Vol}
+
+\renewcommand{\sin}{\sen}
+
+\let\arctan\relax
+\DeclareMathOperator{\arctan}{arc\,tan}
+\DeclareMathOperator{\arccsc}{arc\,csc}
+\DeclareMathOperator{\arccot}{arc\,cot}
+\DeclareMathOperator{\arcsec}{arc\,sec}
+\DeclareMathOperator{\arcsen}{arc\,sen}
+\let\arccos\relax
+\DeclareMathOperator{\arccos}{arc\,cos}
+\let\arcsin\relax
+\DeclareMathOperator{\arcsin}{arc\,sen}
+
+\DeclareMathOperator{\im}{Im}
+\DeclareMathOperator{\re}{Re}
+
+\DeclareMathOperator{\mcd}{mcd}
+\DeclareMathOperator{\mcm}{mcm}
+
+\newcommand{\sset}{\subseteq}
+\renewcommand{\emptyset}{\varnothing}
+
+\renewcommand{\l}{\left}
+\renewcommand{\r}{\right}
+
+\newcommand{\ihat}{\boldsymbol{\hat{\textbf{\i}}}}
+\newcommand{\jhat}{\boldsymbol{\hat{\textbf{\j}}}}
+\newcommand{\khat}{\boldsymbol{\hat{\textbf{k}}}}
+
+\newcommand*\diff{\mathop{}\!{d}}
+\newcommand{\abs}[1]{\left \lvert #1 \right \rvert}
