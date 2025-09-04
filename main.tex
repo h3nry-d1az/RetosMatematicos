@@ -1,4 +1,8 @@
-\documentclass[fecha={5 de agosto de 2025},codigo=minted]{RetoMatematico}
+\documentclass[
+	fecha={5 de agosto de 2025},
+	palabrasclave={RetoSecundaria, ago2025, álgebra, dif1},
+	codigo=minted
+]{RetoMatematico}
 
 \usepackage{RetoExtra} % Comandos y paquetes adicionales
 
@@ -47,7 +51,7 @@ a mano: \begin{align*}
 \end{align*} Haciendo estos últimos cómputos a mano (no son sino productos de números relativamente pequeños) se llega a 10099 como resultado final.
 \end{enumerate}
 
-\seccion{Método por ordenador}
+\nseccion{Método por ordenador}
 Con el siguiente código de \mathematica, digo Python, podemos comprobar que en efecto es cierto para $x,y\leq 10\ 000$, y como ese número es muy grande, el teorema ha de ser cierto por narices:
 \begin{codigo}{python}
 def main() -> None:
@@ -59,6 +63,7 @@ def main() -> None:
 if __name__ == '__main__': main()
 \end{codigo}
 
+\nseccion{Texto de ejemplo}
 Acá va un poco de <<lorem ipsum>> para que los resolutores no se queden solos en esta nueva página:
 
 \lipsum[1-4]

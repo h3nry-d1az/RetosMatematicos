@@ -1,5 +1,5 @@
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{RetoMatematico}[2025/09/03 Plantilla de LaTeX oficial del grupo de Telegram "Retos Matemáticos".]
+\ProvidesClass{RetoMatematico}[2025/09/04 Plantilla de LaTeX del grupo de Telegram "Retos Matemáticos".]
 
 %%%%% Tamaño A4, con fuente de 11 pt. y con los números de ecuaciones a la derecha
 \LoadClass[a4paper,11pt,reqno]{article}
@@ -131,6 +131,12 @@
     \section*{\tikz\node[left color=verdeodi!20,inner sep=3pt]{\normalfont\large\bfseries\sf\color{verdeodi} \theforma\textsuperscript{a} Forma\phantom{xxxxxxxxxxxxxxx}};}
 }
 
+\newcounter{seccion}
+\setcounter{seccion}{0}
+\newcommand{\nseccion}[1]{
+    \addtocounter{seccion}{1}
+    \section*{\tikz\node[left color=verdeodi!20,inner sep=3pt]{\normalfont\large\bfseries\sf\color{verdeodi} \theseccion. #1 \phantom{xxxxxxxxxxxxxxx}};}
+}
 \newcommand{\seccion}[1]{
     \section*{\tikz\node[left color=verdeodi!20,inner sep=3pt]{\normalfont\large\bfseries\sf\color{verdeodi} #1 \phantom{xxxxxxxxxxxxxxx}};}
 }
@@ -166,7 +172,7 @@
 \def\OpcionVerbatim{verbatim}
 
 \ifx\ProblemaResaltado\OpcionMinted
-\RequirePackage{minted} % Instálese el paquete mediante `pip install minted', y ejecútese el compilador con la opción `-shell-escape'.
+\RequirePackage{minted} % Instálese el paquete mediante `pip install latexminted', y ejecútese el compilador con la opción `-shell-escape'.
 \newenvironment{codigo}[1]
  {\VerbatimEnvironment
   \begin{minted}[
