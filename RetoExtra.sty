@@ -1,0 +1,78 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{RetoExtra}[2025/09/03 Herramientas adicionales como complemento a la clase `RetoMatematico.cls`.]
+
+%%%%% Tipografía
+\RequirePackage{mathtools} % Herramientas de tipografía diversas
+\RequirePackage{multicol} % Varias columnas de texto
+\RequirePackage{setspace} % Altera el interlineado del documento
+\RequirePackage[notquote]{hanging} % Sangría
+\makeatletter%%%%%%%%para referenciar ecuaciones en línea
+% Ecuación en línea que puede ser referenciada
+\newcommand*{\inlineequation}[2][]{%
+  \begingroup
+    \refstepcounter{equation}%
+    \ifx\\#1\\%
+    \else
+      \label{#1}%
+    \fi
+    \relpenalty=10000 %
+    \binoppenalty=10000 %
+    \ensuremath{%
+      #2%
+    }%
+    \hfill~\@eqnnum
+  \endgroup
+}
+\makeatother
+\RequirePackage[capitalize]{cleveref} % Mejores referencias
+\crefname{equation}{Ec.}{Ecs.}
+\RequirePackage{polynom} % Operaciones con polinomios
+\RequirePackage{systeme} % Mejores sistemas de ecuaciones
+\RequirePackage{cancel} % Cancelar términos en expresiones
+\RequirePackage{enumitem} % Enumeraciones personalizables
+\RequirePackage{xfrac} % Fracciones oblicuas
+\RequirePackage{natbib} % Gran soporte para bibliografías
+\RequirePackage{lipsum} % El clásico <<lorem ipsum>>
+
+%%%%% Símbolos y fuentes
+\RequirePackage{upgreek} % Letras griegas no italizadas
+\RequirePackage{esvect} % Mejores vectores
+\RequirePackage{eurosym} % Símbolo de euro
+\RequirePackage{yhmath} % Fuentes matemáticas extendidas
+\RequirePackage{wrapfig} % Permite que el texto rodee a la figura
+% Mejores integrales
+\newlength {\longexp}
+\newcommand{\newint}[2]{\int_{\lower0.7ex\hbox{$\scriptstyle#1$}}^{\raise0.7ex\hbox{$\scriptstyle#2$}}}
+\NewDocumentCommand{\otraint}{e{^_}}
+{%
+  \mathop{}\!%
+  \int%
+  \IfValueT{#2}{_{\kern-0.2em\lower0.8ex\hbox{$\scriptstyle#2$}}}%
+  \IfValueT{#1}{^{\kern-0.0em\raise0.5ex\hbox{$\scriptstyle#1$}}\settowidth{\longexp}{$#1$}\hspace{-0.75\longexp}}%
+  \!\mathop{}%
+}
+\RequirePackage{scalerel}
+\def\stretchint#1{\vcenter{\hbox{\stretchto[440]{\displaystyle\int}{#1}}}} % Alargar (sin engordar) una integral
+
+%%%%% Gráficos
+\RequirePackage{pgfplots} % Gráficos de funciones en 2D y 3D
+\RequirePackage{pst-eucl} % Geometría euclídea con PSTricks
+\RequirePackage{pstricks-add} % Parches varios a PSTricks
+% Macro para hallar el baricentro de un triángulo ABC
+\newcommand{\pstBarycenter}[4]{%
+	% #1 = A, #2 = B, #3 = C, #4 = nombre del baricentro
+	\pstMiddleAB[PointName=none,PointSymbol=none]{#2}{#3}{M#4}% Punto medio de BC
+	\pstMiddleAB[PointName=none,PointSymbol=none]{#1}{#3}{N#4}% Punto medio de AC
+	\pstInterLL[PointName=none,PointSymbol=none]{#1}{M#4}{#2}{N#4}{#4}% Intersección de dos medianas = baricentro
+}
+% Macro para hallar el centro de un cuadrilátero ABCD
+\newcommand{\pstcenter}[5]{%
+	% #1 = A, #2 = B, #3 = C, #4 = D, #5 = nombre del centro
+	\pstMiddleAB[PointName=none,PointSymbol=none]{#1}{#2}{M#1#2}% Punto medio de AB
+	\pstMiddleAB[PointName=none,PointSymbol=none]{#2}{#3}{M#2#3}% Punto medio de BC
+	\pstMiddleAB[PointName=none,PointSymbol=none]{#3}{#4}{M#3#4}% Punto medio de CD
+	\pstMiddleAB[PointName=none,PointSymbol=none]{#4}{#1}{M#4#1}% Punto medio de DA
+	\pstInterLL[PointName=none,PointSymbol=none]{M#1#2}{M#3#4}{M#2#3}{M#4#1}{#5}
+}
+\RequirePackage{colortbl} % Colores en tablas
+

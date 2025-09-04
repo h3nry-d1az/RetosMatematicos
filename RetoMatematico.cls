@@ -22,7 +22,7 @@
 \def\ProblemaAutor{José Manuel Sánchez Muñoz}
 \def\ProblemaFecha{14 de marzo de 2718}
 \def\ProblemaPalabrasClave{}
-\def\ProblemaResaltado{minted}
+\def\ProblemaResaltado{ninguno}
 
 \define@key{RetoMatematico.cls}{autor}[1]{ \def\ProblemaAutor{#1} }
 \define@key{RetoMatematico.cls}{fecha}[1]{ \def\ProblemaFecha{#1} }
@@ -46,6 +46,7 @@
 
 %%%%% Título y fecha
 \title{\vspace{-10mm} Retos Matemáticos}
+\author{}
 \date{\ProblemaFecha}
 
 %%%%% Fuentes de texto y ecuaciones
@@ -99,12 +100,6 @@
 \fi
 }
 
-\RequirePackage{fancyhdr}
-\pagestyle{fancy}
-\fancyhf{}
-\cfoot{\thepage}
-\renewcommand{\headrulewidth}{0pt}
-
 %%%%% Detalles tipográficos: separación entre títulos, no indentar notas a pie de página...
 \RequirePackage{titlesec}
 \titlespacing{\section}{0pt}{12pt}{8pt}
@@ -119,7 +114,9 @@
 \makebox[0.7em][r]{\textsuperscript{\@thefnmark}~}{#1}}
 \makeatother
 
-%%%%% Enunciado del reto, forma de resolverlo, énfasis y resolutores del problema
+\parskip=1.5mm
+
+%%%%% Enunciado del reto, forma de resolverlo, sección, énfasis y resolutores del problema
 \newcommand{\ejercicio}[2]{
 \begin{cajaejercicio}
 \noindent\textbf{Ejercicio:} #1
@@ -132,6 +129,10 @@
 \newcommand{\forma}{
     \addtocounter{forma}{1}
     \section*{\tikz\node[left color=verdeodi!20,inner sep=3pt]{\normalfont\large\bfseries\sf\color{verdeodi} \theforma\textsuperscript{a} Forma\phantom{xxxxxxxxxxxxxxx}};}
+}
+
+\newcommand{\seccion}[1]{
+    \section*{\tikz\node[left color=verdeodi!20,inner sep=3pt]{\normalfont\large\bfseries\sf\color{verdeodi} #1 \phantom{xxxxxxxxxxxxxxx}};}
 }
 
 \RequirePackage{empheq}
@@ -165,7 +166,7 @@
 \def\OpcionVerbatim{verbatim}
 
 \ifx\ProblemaResaltado\OpcionMinted
-\RequirePackage{minted}
+\RequirePackage{minted} % Instálese el paquete mediante `pip install minted', y ejecútese el compilador con la opción `-shell-escape'.
 \newenvironment{codigo}[1]
  {\VerbatimEnvironment
   \begin{minted}[
@@ -204,16 +205,18 @@
 \newcommand{\R}{\mathbb{R}}
 \newcommand{\C}{\mathbb{C}}
 
+\DeclareMathOperator{\im}{Im}
+\DeclareMathOperator{\re}{Re}
+\DeclareMathOperator{\mcd}{mcd}
+\DeclareMathOperator{\mcm}{mcm}
 \DeclareMathOperator{\proy}{proy}
 \DeclareMathOperator{\grado}{grado}
-
 \DeclareMathOperator{\Ch}{Ch}
 \DeclareMathOperator{\Sh}{Sh}
 \DeclareMathOperator{\Res}{Res}
 \DeclareMathOperator{\Vol}{Vol}
 
 \renewcommand{\sin}{\sen}
-
 \let\arctan\relax
 \DeclareMathOperator{\arctan}{arc\,tan}
 \DeclareMathOperator{\arccsc}{arc\,csc}
@@ -225,21 +228,14 @@
 \let\arcsin\relax
 \DeclareMathOperator{\arcsin}{arc\,sen}
 
-\DeclareMathOperator{\im}{Im}
-\DeclareMathOperator{\re}{Re}
-
-\DeclareMathOperator{\mcd}{mcd}
-\DeclareMathOperator{\mcm}{mcm}
-
-\newcommand{\sset}{\subseteq}
-\renewcommand{\emptyset}{\varnothing}
-
-\renewcommand{\l}{\left}
-\renewcommand{\r}{\right}
-
 \newcommand{\ihat}{\boldsymbol{\hat{\textbf{\i}}}}
 \newcommand{\jhat}{\boldsymbol{\hat{\textbf{\j}}}}
 \newcommand{\khat}{\boldsymbol{\hat{\textbf{k}}}}
-
 \newcommand*\diff{\mathop{}\!{d}}
 \newcommand{\abs}[1]{\left \lvert #1 \right \rvert}
+\newcommand{\mathematica}{\emph{Mathematica}$^\copyright$}
+
+\newcommand{\sset}{\subseteq}
+\renewcommand{\emptyset}{\varnothing}
+\renewcommand{\l}{\left}
+\renewcommand{\r}{\right}

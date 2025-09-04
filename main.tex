@@ -1,27 +1,68 @@
-\documentclass[fecha={6 de septiembre de 2420}]{RetoMatematico}
+\documentclass[fecha={5 de agosto de 2025},codigo=minted]{RetoMatematico}
 
-\usepackage{lipsum}
+\usepackage{RetoExtra} % Comandos y paquetes adicionales
 
 \begin{document}
 \maketitle
 \thispagestyle{empty}
 
-\ejercicio{Sean \(a\), \(b\) y \(c\) números reales que cumplen \(2^a+4^b=2^c\) y \(4^a+2^b=4^c\). Obténgase el valor mínimo de \(c\).}{Propuesto por José Manuel Sánchez Muñoz.}
+\ejercicio{
+	\begin{enumerate}[label=\emph{\alph*})]
+		\item Demuéstrese la siguiente identidad: \[\l(x^2+y^2+\l(x+y\r)^2\r)^2 = 2\l(x^4+y^4+\l(x+y\r)^4\r),\quad\forall x, y \in \R.\]
+		\item Como aplicación del resultado anterior, calcúlese el valor exacto de \[\sqrt{\frac{23^4+87^4+110^4}{2}}.\]
+	\end{enumerate}
+}{Propuesto por Antonio Roberto Martínez Fernández.}
 
 \forma
-\enfasis{a^n + b^2 \neq c^n\quad \forall a,b,c \in \Z;\ n \in \N_{\geq 3}\footnotemark}\footnotetext{Pie de página.}
+\begin{enumerate}[label=\emph{\alph*})]
+\item La fórmula propuesta en el enunciado es la conocida como \emph{identidad de Candido} y se puede comprobar desarrollando cada miembro por separado y viendo que coinciden. En efecto, se tiene que
+\begin{align*}
+	\Bigl(x^2&+y^2+\l(x+y\r)^2\Bigr)^2 = \l(x^2 + y^2\r)^2 + (x+y)^4 + 2\l(x^2 + y^2\r)(x+y)^2\\
+	&= \underbrace{x^4 + y^4 + 2x^2y^2}+\underbrace{x^4 + 4x^3y + 6x^2y^2 + 4xy^3 + y^4} + 2\l(x^2 + y^2\r)(x+y)^2\\
+	&= 2x^4 + 2y^4 + 8x^2y^2 + 4x^3y + 4xy^3 + 2\l(x^4 + x^2y^2 + 2x^3 y + x^2 y^2 + y^4 + 2xy^3\r)\\
+	&= 2(2x^4 + 2y^4 + 6x^2y^2 + 4x^3 y + 4xy^3)\\
+	&= 2(x^4 + y^4 + \underbrace{x^4 + 4x^3 y + 6x^2y^2 + 4xy^3 + y^4})\\
+	&= 2\l(x^4 + y^4 + (x+y)^4\r). \tag*{\qedsymbol}
+\end{align*}
+
+\item Aplicando la identidad anterior con $x = 23$ e $y = 87$, todo se reduce a calcular los
+cuadrados de 23, 87 y de $23 + 87 = 110$ y echar unas sencillas cuentas que pueden hacerse
+a mano: \begin{align*}
+	\sqrt{\frac{23^4+87^4+110^4}{2}} &= \sqrt{\frac{2\cdot\l(23^4+87^4+110^4\r)}{4}} = \frac{\sqrt{\l(23^2+87^2+110^2\r)^2}}{2}\\
+	&= \frac{529 + 7\ 569 + 12\ 100}{2} = \frac{20\ 198}{2} = 10\ 099.
+\end{align*} Por lo tanto \enfasis{\sqrt{\frac{23^4+87^4+110^4}{2}} = 10\ 099}
+\end{enumerate}
+
+\forma
+\begin{enumerate}[label=\emph{\alph*})]
+\item Este resultado puede demostrarse fácilmente expandiendo ambas expresiones y verificando que son idénticas: \begin{align*}
+    \left(x^2 + y^2 + (x+y)^2\right)^2 &= \left(2x^2 + 2y^2 + 2xy\right)^2 = 4x^4 + 4y^4 + 12x^2y^2 + 8x^3y + 8xy^3\\
+    &= 2(x^4 + y^4 + (x^4 + 4x^3 y + 6x^2y^2 + 4 xy^3 + y^4))\\
+	&= 2(x^4 + y^4 + (x+y)^4).
+\end{align*}
+\item Y el segundo apartado no es sino un corolario de lo anterior: \begin{align*}
+    \sqrt{\frac{23^4 + 87^4 + 110^4}{2}} &= \sqrt{\frac{2(23^4 + 87^4 + (23+87)^4)}{4}} \stackrel{\text{a)}}{=} \sqrt{\frac{\left(23^2 + 87^2 + 110^2\right)^2}{4}}\\
+	&= \frac{23^2 + 87^2 + 110^2}{2} = \frac{(2\cdot 11 + 1)^2 + (2\cdot 43 + 1)^2 + (2\cdot 55)^2}{2}\\
+	&= 2(11^2 + 43^2 + 55^2) + 109.
+\end{align*} Haciendo estos últimos cómputos a mano (no son sino productos de números relativamente pequeños) se llega a 10099 como resultado final.
+\end{enumerate}
+
+\seccion{Método por ordenador}
+Con el siguiente código de \mathematica, digo Python, podemos comprobar que en efecto es cierto para $x,y\leq 10\ 000$, y como ese número es muy grande, el teorema ha de ser cierto por narices:
 \begin{codigo}{python}
-def main():
-	print("Hello, world")
+def main() -> None:
+	for x in range(1, 10_001):
+		for y in range(1, 10_001):
+			assert (x**2 + y**2 + (x+y)**2)**2\
+			    == 2*(x**4 + y**4 + (x+y)**4)
+
+if __name__ == '__main__': main()
 \end{codigo}
 
-\lipsum[1-10]
-\newpage
+Acá va un poco de <<lorem ipsum>> para que los resolutores no se queden solos en esta nueva página:
 
-\forma
-\lipsum[1-10]
+\lipsum[1-4]
 
-\resolutores{
-	Henry Díaz Bordón, Miguel Ángel Díaz Quiñones, Francisco Javier García Capitán, Alejandro M. García Gil, Ignacio Larrosa Cañestro, Antonio Roberto Martínez Fernández, Pablo Vitoria García y el proponente
-}
+\resolutores{Henry Díaz Bordón, José Manuel Sánchez Muñoz, Pablo Vitoria García y el proponente.}
+
 \end{document}
