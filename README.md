@@ -1,8 +1,10 @@
-<div align="center"><i><b>Plantilla de LaTeX del grupo de Telegram «Retos Matemáticos»</b></i></div>
-<br>
-<hr>
-<br>
+<div align="center">
 
+<img src="https://github.com/user-attachments/assets/c67a0bf4-7436-4ed4-a2f9-67181ff65575" width="50%"></img>
+	
+<i><b>Plantilla de LaTeX del grupo de Telegram «Retos Matemáticos».</b></i>
+</div>
+<hr>
 El código de este repositorio es aquel empleado para la elaboración de las soluciones finales de los retos propuestos en el grupo de Telegram [«Retos Matemáticos»](https://t.me/Retos_Matematicos), de José Manuel Sánchez Muñoz.
 
 Asimismo, la plantilla original - que constituye la inmensa mayoría del contenido de este paquete - es producto de él, mi trabajo solo ha sido su reorganización y la creación de archivos `.cls` y  `.sty` reutilizables y amigables para aquel poco versado en $\LaTeX$, o que simplemente busque mayor comodidad.
@@ -82,79 +84,36 @@ Puede cargas algunas funciones y paquetes adicionales a través del módulo sepa
 Las definiciones del mismo son las siguientes:
 
 ### Tipografía
-* `mathtools`: Herramientas de tipografía diversas
-* `multicol`: Varias columnas de texto
-* `setspace`: Altera el interlineado del documento
-\RequirePackage[notquote]{hanging`: Sangría
-\makeatletter%%%%%%%%para referenciar ecuaciones en línea
-% Ecuación en línea que puede ser referenciada
-\newcommand*{\inlineequation}[2][]{%
-  \begingroup
-    \refstepcounter{equation}%
-    \ifx\\#1\\%
-    \else
-      \label{#1}%
-    \fi
-    \relpenalty=10000 %
-    \binoppenalty=10000 %
-    \ensuremath{%
-      #2%
-    }%
-    \hfill~\@eqnnum
-  \endgroup
-}
-\makeatother
-\RequirePackage[capitalize]{cleveref`: Mejores referencias
-\crefname{equation}{Ec.}{Ecs.}
-* `polynom`: Operaciones con polinomios
-* `systeme`: Mejores sistemas de ecuaciones
-* `cancel`: Cancelar términos en expresiones
-* `enumitem`: Enumeraciones personalizables
-* `xfrac`: Fracciones oblicuas
-* `natbib`: Gran soporte para bibliografías
-* `lipsum`: El clásico <<lorem ipsum>>
+* Paquete `mathtools`: Herramientas de tipografía diversas.
+* Paquete `multicol`: Varias columnas de texto.
+* Paquete `setspace`: Altera el interlineado del documento.
+* Paquete `hanging`: Permite sangría.
+* Comando `\inlineequation`: Ecuación en línea que puede ser referenciada.
+* Paquete `cleveref`: Mejores referencias.
+* Paquete `polynom`: Operaciones con polinomios
+* Paquete `systeme`: Mejores sistemas de ecuaciones.
+* Paquete `cancel`: Cancelar términos en expresiones.
+* Paquete `enumitem`: Enumeraciones personalizables.
+* Paquete `xfrac`: Fracciones oblicuas.
+* Paquete `natbib`: Gran soporte para bibliografías
+* Paquete `lipsum`: El conocido "lorem ipsum dolor sit amen".
 
-%%%%% Símbolos y fuentes
-* `upgreek`: Letras griegas no italizadas
-* `esvect`: Mejores vectores
-* `eurosym`: Símbolo de euro
-* `yhmath`: Fuentes matemáticas extendidas
-* `wrapfig`: Permite que el texto rodee a la figura
-% Mejores integrales
-\newlength {\longexp}
-\newcommand{\newint}[2]{\int_{\lower0.7ex\hbox{$\scriptstyle#1$}}^{\raise0.7ex\hbox{$\scriptstyle#2$}}}
-\NewDocumentCommand{\otraint}{e{^_}}
-{%
-  \mathop{}\!%
-  \int%
-  \IfValueT{#2}{_{\kern-0.2em\lower0.8ex\hbox{$\scriptstyle#2$}}}%
-  \IfValueT{#1}{^{\kern-0.0em\raise0.5ex\hbox{$\scriptstyle#1$}}\settowidth{\longexp}{$#1$}\hspace{-0.75\longexp}}%
-  \!\mathop{}%
-}
-* `scalerel}
-\def\stretchint#1{\vcenter{\hbox{\stretchto[440]{\displaystyle\int}{#1}}}`: Alargar (sin engordar) una integral
+### Símbolos y fuentes
+* Paquete `upgreek`: Letras griegas no italizadas.
+* Paquete `esvect`: Mejores vectores.
+* Paquete `eurosym`: Símbolo de euro.
+* Paquete `yhmath`: Fuentes matemáticas extendidas.
+* Paquete `wrapfig`: Permite que el texto rodee a la figura.
+* Comandos `\newint` y `\otraint`: Mejores integrales.
+* Comando `\stretchint{⟨proporción⟩}`: Alargar (sin engordar) una integral.
 
-%%%%% Gráficos
-* `pgfplots`: Gráficos de funciones en 2D y 3D
-* `pst-eucl`: Geometría euclídea con PSTricks
-* `pstricks-add`: Parches varios a PSTricks
-% Macro para hallar el baricentro de un triángulo ABC
-\newcommand{\pstBarycenter}[4]{%
-	% #1 = A, #2 = B, #3 = C, #4 = nombre del baricentro
-	\pstMiddleAB[PointName=none,PointSymbol=none]{#2}{#3}{M#4}% Punto medio de BC
-	\pstMiddleAB[PointName=none,PointSymbol=none]{#1}{#3}{N#4}% Punto medio de AC
-	\pstInterLL[PointName=none,PointSymbol=none]{#1}{M#4}{#2}{N#4}{#4}% Intersección de dos medianas = baricentro
-}
-% Macro para hallar el centro de un cuadrilátero ABCD
-\newcommand{\pstcenter}[5]{%
-	% #1 = A, #2 = B, #3 = C, #4 = D, #5 = nombre del centro
-	\pstMiddleAB[PointName=none,PointSymbol=none]{#1}{#2}{M#1#2}% Punto medio de AB
-	\pstMiddleAB[PointName=none,PointSymbol=none]{#2}{#3}{M#2#3}% Punto medio de BC
-	\pstMiddleAB[PointName=none,PointSymbol=none]{#3}{#4}{M#3#4}% Punto medio de CD
-	\pstMiddleAB[PointName=none,PointSymbol=none]{#4}{#1}{M#4#1}% Punto medio de DA
-	\pstInterLL[PointName=none,PointSymbol=none]{M#1#2}{M#3#4}{M#2#3}{M#4#1}{#5}
-}
-* `colortbl`: Colores en tablas
+### Gráficos
+* Paquete `pgfplots`: Gráficos de funciones en 2D y 3D.
+* Paquete `pst-eucl`: Geometría euclídea con PSTricks.
+* Paquete `pstricks-add`: Parches varios a PSTricks.
+* Comando `\pstBarycenter{⟨A⟩}{⟨B⟩}{⟨C⟩}{⟨nombre⟩}`: Macro para hallar el baricentro de un triángulo $\triangle ABC$.
+* Comando `\pstcenter{⟨A⟩}{⟨B⟩}{⟨C⟩}{⟨D⟩}{⟨nombre⟩}`: Macro para hallar el centro de un cuadrilátero $ABCD$.
+* Paquete `colortbl`: Colores en tablas.
 
 <br>
 <br>
