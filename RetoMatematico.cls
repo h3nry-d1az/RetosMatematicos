@@ -44,6 +44,9 @@
     breaklinks=true
 }
 
+%%%%% Para poder compilar PsTricks con PDFLaTeX
+\RequirePackage[crop=off]{auto-pst-pdf}
+
 %%%%% Título y fecha
 \title{\vspace{-10mm} Retos Matemáticos}
 \author{}
