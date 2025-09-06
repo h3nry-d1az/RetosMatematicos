@@ -90,11 +90,9 @@
 \end{tikzpicture}
 \else
 \begin{tikzpicture}[remember picture,overlay]
-	\node[font=\sffamily,anchor=east,
-	xshift=-0.7cm,yshift=-5.44cm] at (current page.east)
+	\node[font=\sffamily,anchor=east] at ([shift={(-0.45cm,-19.7)}]current page.north east)
 	{\color{verdeodi!30} \rotatebox{270}{\sf {\raggedleft \footnotesize \ccLogo\,\ccAttribution\,\ccNonCommercial\,\ccShareAlike{} \href{https://t.me/Retos_Matematicos}{\color{verdeodi!30} Retos Matemáticos: \texttt{https:/\!/t.me/Retos\_Matematicos}}}}};
-	\node[font=\sffamily,anchor=west,
-	xshift=0.7cm,yshift=5.75cm] at (current page.west)
+	\node[font=\sffamily,anchor=west] at ([shift={(0.7cm,-6.5)}]current page.north west)
 	{\color{verdeodi!30}\rotatebox{90}{\sf{\raggedleft \footnotesize ISSN: 2952--0746; \ProblemaFecha}}};
 \end{tikzpicture}
 \fi
@@ -179,6 +177,7 @@
     % frame=lines,
     escapeinside=||,
 	mathescape,
+	xleftmargin=\parindent,
 	linenos=true]{#1}}
  {\end{minted}}
 \else\ifx\ProblemaResaltado\OpcionVerbatim
