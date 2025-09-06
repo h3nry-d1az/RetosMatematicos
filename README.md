@@ -68,11 +68,13 @@ Aquí:
 
 Además, `RetoMatematico.cls` provee varios comandos que abstraen las distintas estructuras dentro de una solución:
 
-* `\ejercicio{⟨enunciado⟩}{⟨proponente⟩}`: Crea una caja con el enunciado del ejercicio y seguidamente el proponente del mismo.
+* `\ejercicio{⟨enunciado⟩}{⟨proponente⟩}`: Crea una caja con el enunciado del ejercicio y seguidamente el proponente del mismo.†
 * `\forma`: Ejecutarlo por primera vez genera *1ª Forma*, por segunda vez *2ª Forma*...
 * `\[n]seccion{⟨título⟩}`: Genera una sección arbitraria, numerada si el comando posee la `n` opcional.
 * `\enfasis{⟨ecuación⟩}`: Produce una ecuación en una caja verde que le da énfasis.
 * `\resolutores{⟨resolutores⟩}`: Escribe *Resuelto por*, seguido de quienes hayan resuelto el problema.
+
+**†** Existe además el entorno `cajaejercicio` que genera una caja de ejercicio sin ningún contenido en su interior.
 
 ## El paquete `RetoExtra.sty`
 

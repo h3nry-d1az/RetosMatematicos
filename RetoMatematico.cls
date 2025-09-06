@@ -93,9 +93,9 @@
 \end{tikzpicture}
 \else
 \begin{tikzpicture}[remember picture,overlay]
-	\node[font=\sffamily] at ([shift={(9.8,-19.5)}]current page.north)
+	\node[font=\sffamily] at ([shift={(9.8,-19.6)}]current page.north)
 	{\color{verdeodi!30} \rotatebox{270}{\sf {\raggedleft \footnotesize \ccLogo\,\ccAttribution\,\ccNonCommercial\,\ccShareAlike{} \href{https://t.me/Retos_Matematicos}{\color{verdeodi!30} Retos Matemáticos: https:/\!/t.me/Retos\_Matematicos}}}};
-	\node[font=\sffamily] at ([shift={(-10,-6.26)}]current page.north)
+	\node[font=\sffamily] at ([shift={(-10,-6.4)}]current page.north)
 	{\color{verdeodi!30}\rotatebox{90}{\sf{\raggedleft \footnotesize ISSN: 2952--0746; \ProblemaFecha}}};
 \end{tikzpicture}
 \fi
