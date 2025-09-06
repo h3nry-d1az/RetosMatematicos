@@ -64,8 +64,31 @@ if __name__ == '__main__': main()
 \end{codigo}
 
 \nseccion{Texto de ejemplo}
-Acá va un poco de <<lorem ipsum>> para que los resolutores no se queden solos en esta nueva página:
+Aquí va un poco de <<lorem ipsum>> para que los resolutores no se queden solos en esta nueva página:
 
+\begin{wrapfigure}{r}{36mm}
+	\psset{unit=3cm,algebraic=true,dimen=middle,dotstyle=o,dotsize=4pt 0,linewidth=0.6pt,arrowsize=3pt 2,arrowinset=0.25}
+	\centering
+	\vspace{-4.5mm}
+	\begin{pspicture*}(-0.13,-0.12)(1.13,1.13)
+		\pstGeonode[PointName=none,PointSymbol=none]
+		(0,0){A}
+		(0,1){B}
+		(1,1){C}
+		(1,0){D}
+		(0.41,1){P}
+		\pstInterLL[PointName=none,PointSymbol=none]{A}{P}{B}{D}{E}
+		\pspolygon[fillcolor=verdeodi,fillstyle=solid,opacity=0.15](B)(D)(A)(P)
+		\pspolygon(A)(B)(C)(D)
+		\rput(A){\uput{0.6ex}[-135](0,0){\(A\)}}
+		\rput(B){\uput{0.6ex}[135](0,0){\(B\)}}
+		\rput(C){\uput{0.6ex}[45](0,0){\(C\)}}
+		\rput(D){\uput{0.6ex}[-45](0,0){\(D\)}}
+		\rput(P){\uput{0.6ex}[90](0,0){\(P\)}}
+		\rput(E){\uput{0.6ex}[10](0,0){\(E\)}}
+	\end{pspicture*}
+	\caption{}\label{fig:jmsm1}	
+\end{wrapfigure}
 \lipsum[1-4]
 
 \resolutores{Henry Díaz Bordón, José Manuel Sánchez Muñoz, Pablo Vitoria García y el proponente.}
