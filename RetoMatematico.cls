@@ -2,7 +2,7 @@
 \ProvidesClass{RetoMatematico}[2025/09/04 Plantilla de LaTeX del grupo de Telegram "Retos Matemáticos".]
 
 %%%%% Tamaño A4, con fuente de 11 pt. y con los números de ecuaciones a la derecha
-\LoadClass[a4paper,11pt,reqno]{article}
+\LoadClass[letter,11pt,reqno]{article}
 
 \RequirePackage[utf8]{inputenc}
 \RequirePackage[T1]{fontenc}
@@ -72,7 +72,7 @@
 %%%%% Márgenes del documento
 \RequirePackage{pgf}
 \RequirePackage{tikz}
-\usetikzlibrary{arrows}
+\usetikzlibrary{arrows,calc}
 
 \RequirePackage{ccicons}
 \RequirePackage{qrcode}
@@ -93,9 +93,9 @@
 \end{tikzpicture}
 \else
 \begin{tikzpicture}[remember picture,overlay]
-	\node[font=\sffamily,anchor=east] at ([shift={(-0.45cm,-19.7)}]current page.north east)
-	{\color{verdeodi!30} \rotatebox{270}{\sf {\raggedleft \footnotesize \ccLogo\,\ccAttribution\,\ccNonCommercial\,\ccShareAlike{} \href{https://t.me/Retos_Matematicos}{\color{verdeodi!30} Retos Matemáticos: \texttt{https:/\!/t.me/Retos\_Matematicos}}}}};
-	\node[font=\sffamily,anchor=west] at ([shift={(0.7cm,-6.5)}]current page.north west)
+	\node[font=\sffamily] at ([shift={(9.8,-19.5)}]current page.north)
+	{\color{verdeodi!30} \rotatebox{270}{\sf {\raggedleft \footnotesize \ccLogo\,\ccAttribution\,\ccNonCommercial\,\ccShareAlike{} \href{https://t.me/Retos_Matematicos}{\color{verdeodi!30} Retos Matemáticos: https:/\!/t.me/Retos\_Matematicos}}}};
+	\node[font=\sffamily] at ([shift={(-10,-6.26)}]current page.north)
 	{\color{verdeodi!30}\rotatebox{90}{\sf{\raggedleft \footnotesize ISSN: 2952--0746; \ProblemaFecha}}};
 \end{tikzpicture}
 \fi
