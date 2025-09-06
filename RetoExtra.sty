@@ -76,3 +76,15 @@
 }
 \RequirePackage{colortbl} % Colores en tablas
 
+%%%%% 
+%% Estas líneas son requeridas para ≥TL2021 debido a 
+%% incompatibilidades entre hyperref y preview
+%% (See https://www.reddit.com/r/LaTeX/comments/jhi7nk/with_pdflatex_hyperref_breaks_autopstpdf/ and 
+%% https://lists.gnu.org/archive/html/bug-auctex/2020-11/msg00000.html  
+\makeatletter
+\ifPreview
+  \let\Hy@FirstPageHook\relax
+  \let\Hy@EveryPageAnchor\relax
+\fi
+\makeatother
+%%%%%
