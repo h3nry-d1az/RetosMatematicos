@@ -13,7 +13,7 @@ Asimismo, la plantilla original - que constituye la inmensa mayoría del conteni
 # Cómo usar
 Primeramente, descargue la plantilla haciendo clic en el botón `Code` en la parte derecha arriba del contenido del repositorio y posteriormente `Download ZIP` (y luego descomprima el archivo `.zip` en una carpeta nueva), o en su defecto haga clic en el botón `Use this template`.
 
-Un ejemplo mínimo funcional se encuentra en el archivo `main.tex`, luego basta eliminar las líneas $9\text{-}66$ y comenzar a escribir.
+Un ejemplo mínimo funcional se encuentra en el archivo `main.tex`, luego basta eliminar las líneas $13\text{-}71$ y comenzar a escribir.
 
 ## Parámetros
 La clase `RetoMatematico` puede ser llamada con tres parámetros distintos:
