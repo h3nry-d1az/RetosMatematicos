@@ -5,25 +5,53 @@
 <i><b>Plantilla de LaTeX del grupo de Telegram «Retos Matemáticos».</b></i>
 </div>
 <hr>
-El código de este repositorio es aquel empleado para la elaboración de las soluciones finales de los retos propuestos en el grupo de Telegram [«Retos Matemáticos»](https://t.me/Retos_Matematicos), de José Manuel Sánchez Muñoz.
+
+El código de este repositorio es aquel empleado para la elaboración de las soluciones finales de los retos propuestos en el grupo de Telegram [«Retos Matemáticos»](https://t.me/Retos_Matematicos), de [José Manuel Sánchez Muñoz](https://github.com/josemanuelsan1973).
 
 Asimismo, la plantilla original - que constituye la inmensa mayoría del contenido de este paquete - es producto de él, mi trabajo solo ha sido su reorganización y la creación de archivos `.cls` y  `.sty` reutilizables y amigables para aquel poco versado en $\LaTeX$, o que simplemente busque mayor comodidad.
 
-Esta plantilla ha de utilizarse preferiblemente con $\text{pdf}\ \LaTeX$, aunque debería de ser también compatible con $\text{Lua} \LaTeX$.
+# Preliminares
 
-# Instalación
+Esta sección tiene como propósito servir de introducción a $\LaTeX$ y, con suerte, una solución o alivio a los dolores de cabeza que puede conllevar su configuración.
+
+A quienes quieran saltarse este paso y simplemente comenzar a crear documentos, pueden abrirse una cuenta en [Overleaf](https://www.overleaf.com/) y saltar a la sección [Recursos para aprender LaTeX](https://github.com/h3nry-d1az/RetoMatematico.cls#recursos-para-aprender-latex).
+
+## Instalación
+En primera instancia, uno ha de instalar una *distribución* de $\LaTeX$, pues este no es un único compilador monolítico, sino que cada sistema operativo tiene una o varias implementaciones distintas de los a su vez varios sabores de $\TeX$ (véase la sección [*Compiladores*](https://github.com/h3nry-d1az/RetoMatematico.cls#compiladores)).
+
+Se suele recomendar $\text{Mik}\TeX$, pues se encuentra disponible para Windows, MacOS y Linux, y su instalación es relativamente sencilla; puede descargarlo a través de su página principal [[1]](https://miktex.org/download). No obstante, destacan también $\TeX\ \text{Live}$ en Linux y $\text{Mac}\TeX$ en MacOS como las más notables alternativas. 
+
+## Editor de código
+Seguidamente, es necesario un programa con el que crear el propio documento: un editor de código, o mejor todavía, un IDE (siglas en inglés de entorno de desarrollo integrado).
+
+El software por antonomasia para esta labor es [TeXstudio](https://www.texstudio.org/), de instalación prácticamente inmediata y que funciona nada más tenerlo en el equipo, la recomendación a todo principiante.
+
+No obstante, las alternativas son numerosas e incluso más potentes en ciertos aspectos. [Visual Studio Code](https://code.visualstudio.com/) es también muy amigable para los novatos, aunque no se puede decir que es un editor de $\LaTeX$ per se, sino que permite editar código de una infinidad de lenguajes. Por este motivo, para configurar $\LaTeX$ correctamente en el mismo hará falta bajar las extensiones [LaTeX Workshop](https://marketplace.visualstudio.com/items?itemName=James-Yu.latex-workshop) y opcionalmente [LTeX](https://marketplace.visualstudio.com/items?itemName=valentjn.vscode-ltex), este último dedicado a detectar errores ortográficos. Es probable que la instalación de LTeX falle - al menos, he visto numerosos casos así -, pero como siempre la solución está en Stack Overflow [[2]](https://stackoverflow.com/questions/78905169/vs-code-ltex-extension-fails-to-run-with-java-in-latex-profile).
+
+Por último, para el lector versado en editores de código más avanzados como (Neo)Vim o Emacs, existen extensiones muy buenas para ambos [[3](https://github.com/lervag/vimtex), [4](https://www.gnu.org/software/auctex/)]. Esta opción **NO** se recomienda a principiantes.
+
+## Compiladores
+
+
+## Recursos para aprender $\LaTeX$
+$\LaTeX$ es un lenguaje increíblemente potente, con funcionalidades que van desde la tipografía más simple hasta, bueno, hasta ser un lenguaje Turing-completo. Por tanto, existen guías de $\LaTeX$ para todos los niveles, aunque comenzar a usarlo es rápido y satisfactorio, y apenas en unas horas puede tenerse una base más o menos sólida sobre este. Algunos de los mejores libros y tutoriales sobre este ámbito son los siguientes:
+* [The Not So Short Introduction to LaTeX 2ε](https://tug.ctan.org/info/lshort/english/lshort.pdf) : Completísimo y gratis, una lectura esencial.
+* [Learn LaTeX in 30 minutes](https://www.overleaf.com/learn/latex/Learn_LaTeX_in_30_minutes): Rápido y al grano, del propio Overleaf.
+* [Wikibooks: LaTeX](http://en.wikibooks.org/wiki/LaTeX): No está completo del todo, pero lo que hay es fenomenal.
+
+# Cómo usar
 Primeramente, descargue la plantilla haciendo clic en el botón `Code` en la parte derecha arriba del contenido del repositorio y posteriormente `Download ZIP` (y luego descomprima el archivo `.zip` en una carpeta nueva), o en su defecto haga clic en el botón `Use this template`.
 
 Un ejemplo mínimo funcional se encuentra en el archivo `main.tex`, luego basta eliminar las líneas $9\text{-}66$ y comenzar a escribir.
 
-# Cómo usar
-En primera instancia, la clase `RetoMatematico` puede ser llamada con tres parámetros distintos:
+## Parámetros
+La clase `RetoMatematico` puede ser llamada con tres parámetros distintos:
 
 ```latex
 \documentclass[
     autor={Yo}
 	fecha={dd de mm de AAAA},
-	palabrasclave={RetoSecundaria, mmAAAA, álgebra, difX},
+	palabrasclave={RetoSecundaria, mmmAAAA, álgebra, difX},
 	codigo=minted
 ]{RetoMatematico}
 ```
@@ -110,6 +138,7 @@ Las definiciones del mismo son las siguientes:
 * Comando `\stretchint{⟨proporción⟩}`: Alargar (sin engordar) una integral.
 
 ### Gráficos
+* Paquete `auto-pst-pdf`: Permite compilar PStricks con $\text{pdf}\LaTeX$.
 * Paquete `pgfplots`: Gráficos de funciones en 2D y 3D.
 * Paquete `pst-eucl`: Geometría euclídea con PSTricks.
 * Paquete `pstricks-add`: Parches varios a PSTricks.
