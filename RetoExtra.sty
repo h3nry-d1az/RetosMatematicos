@@ -55,6 +55,19 @@
 \def\stretchint#1{\vcenter{\hbox{\stretchto[440]{\displaystyle\int}{#1}}}} % Alargar (sin engordar) una integral
 
 %%%%% Gráficos
+\RequirePackage[crop=off]{auto-pst-pdf} % Permite compilar PStricks con pdfLaTeX
+%%%%% 
+%% Estas líneas son requeridas para ≥TL2021 debido a 
+%% incompatibilidades entre hyperref y preview
+%% (See https://www.reddit.com/r/LaTeX/comments/jhi7nk/with_pdflatex_hyperref_breaks_autopstpdf/ and 
+%% https://lists.gnu.org/archive/html/bug-auctex/2020-11/msg00000.html  
+\makeatletter
+\ifPreview
+  \let\Hy@FirstPageHook\relax
+  \let\Hy@EveryPageAnchor\relax
+\fi
+\makeatother
+%%%%%
 \RequirePackage{pgfplots} % Gráficos de funciones en 2D y 3D
 \RequirePackage{pst-eucl} % Geometría euclídea con PSTricks
 \RequirePackage{pstricks-add} % Parches varios a PSTricks
@@ -75,16 +88,3 @@
 	\pstInterLL[PointName=none,PointSymbol=none]{M#1#2}{M#3#4}{M#2#3}{M#4#1}{#5}
 }
 \RequirePackage{colortbl} % Colores en tablas
-
-%%%%% 
-%% Estas líneas son requeridas para ≥TL2021 debido a 
-%% incompatibilidades entre hyperref y preview
-%% (See https://www.reddit.com/r/LaTeX/comments/jhi7nk/with_pdflatex_hyperref_breaks_autopstpdf/ and 
-%% https://lists.gnu.org/archive/html/bug-auctex/2020-11/msg00000.html  
-\makeatletter
-\ifPreview
-  \let\Hy@FirstPageHook\relax
-  \let\Hy@EveryPageAnchor\relax
-\fi
-\makeatother
-%%%%%
