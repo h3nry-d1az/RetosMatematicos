@@ -14,7 +14,7 @@ Asimismo, la plantilla original - que constituye la inmensa mayoría del conteni
 
 Esta sección tiene como propósito servir de introducción a $\LaTeX$ y, con suerte, una solución o alivio a los dolores de cabeza que puede conllevar su configuración.
 
-A quienes quieran saltarse este paso y simplemente comenzar a crear documentos, pueden abrirse una cuenta en [Overleaf](https://www.overleaf.com/) y saltar a la sección [Recursos para aprender LaTeX](https://github.com/h3nry-d1az/RetoMatematico.cls#recursos-para-aprender-latex).
+Quienes quieran saltarse este paso y simplemente comenzar a crear documentos, pueden abrirse una cuenta en [Overleaf](https://www.overleaf.com/) y saltar a la sección [Recursos para aprender LaTeX](https://github.com/h3nry-d1az/RetoMatematico.cls#recursos-para-aprender-latex).
 
 ## Instalación
 En primera instancia, uno ha de instalar una *distribución* de $\LaTeX$, pues este no es un único compilador monolítico, sino que cada sistema operativo tiene una o varias implementaciones distintas de los a su vez varios sabores de $\TeX$ (véase la sección [*Compiladores*](https://github.com/h3nry-d1az/RetoMatematico.cls#compiladores)).
@@ -26,16 +26,20 @@ Seguidamente, es necesario un programa con el que crear el propio documento: un 
 
 El software por antonomasia para esta labor es [TeXstudio](https://www.texstudio.org/), de instalación prácticamente inmediata y que funciona nada más tenerlo en el equipo, la recomendación a todo principiante.
 
-No obstante, las alternativas son numerosas e incluso más potentes en ciertos aspectos. [Visual Studio Code](https://code.visualstudio.com/) es también muy amigable para los novatos, aunque no se puede decir que es un editor de $\LaTeX$ per se, sino que permite editar código de una infinidad de lenguajes. Por este motivo, para configurar $\LaTeX$ correctamente en el mismo hará falta bajar las extensiones [LaTeX Workshop](https://marketplace.visualstudio.com/items?itemName=James-Yu.latex-workshop) y opcionalmente [LTeX](https://marketplace.visualstudio.com/items?itemName=valentjn.vscode-ltex), este último dedicado a detectar errores ortográficos. Es probable que la instalación de LTeX falle - al menos, he visto numerosos casos así -, pero como siempre la solución está en Stack Overflow [[2]](https://stackoverflow.com/questions/78905169/vs-code-ltex-extension-fails-to-run-with-java-in-latex-profile).
+No obstante, el resto de opciones pueden llegar a ser incluso más potentes en ciertos aspectos. [Visual Studio Code](https://code.visualstudio.com/) es también muy amigable para los novatos, aunque no se puede decir que es un editor de $\LaTeX$ per se, sino que permite editar código de una infinidad de lenguajes. Por este motivo, para configurar $\LaTeX$ correctamente en el mismo hará falta bajar las extensiones [LaTeX Workshop](https://marketplace.visualstudio.com/items?itemName=James-Yu.latex-workshop) y opcionalmente [LTeX](https://marketplace.visualstudio.com/items?itemName=valentjn.vscode-ltex), este último dedicado a detectar errores ortográficos. Es probable que la instalación de LTeX falle - al menos, se han visto numerosos casos así -, pero como siempre la solución está en Stack Overflow [[2]](https://stackoverflow.com/questions/78905169/vs-code-ltex-extension-fails-to-run-with-java-in-latex-profile).
 
 Por último, para el lector versado en editores de código más avanzados como (Neo)Vim o Emacs, existen extensiones muy buenas para ambos [[3](https://github.com/lervag/vimtex), [4](https://www.gnu.org/software/auctex/)]. Esta opción **NO** se recomienda a principiantes.
 
 ## Compiladores
+Lo que hoy se conoce como $\LaTeX$ se construye enteramente sobre $\TeX$, un sistema de tipografía lanzado por primera vez en 1978 por el celebérrimo matemático e informático Donald Knuth. $\LaTeX$ no es sino una extensión del mismo, una entre muchas; sin embargo, la gran mayoría de las mismas son a su vez superconjuntos de $\LaTeX$.
 
+En primer lugar, existe $\text{pdf}\LaTeX$, esencialmente $\LaTeX$ pero con compilación directa a PDF. Más interesantemente, existen $\text{Xe}\TeX$ y $\text{Xe}\LaTeX$, con un motor bastante más potente y una calidad tipográfica superior - a costa de tiempos de compilación considerablemente más largos -; estos permiten, por ejemplo, importar archivos de fuente TTF y OTF sin tener que definir las tediosas métricas que requiere $\LaTeX$. Asimismo, $\text{Lua}\TeX$ es otra alternativa más, cuya más notable característica (y la que le otorga el nombre) es poseer un motor de Lua embebido. Finalmente, se encuentra $\text{Con}\TeX\text{t}$ de manera paralela, con una sintaxis bastante distinta a lo habitual.
+
+La elección que haga el lector no debería ser demasiado importante, pues esta plantilla funciona correctamente en todos los sabores anteriores salvo el último (y con algunos posibles inconvenientes al recurrir a PStricks en $\text{pdf}\LaTeX$ (aunque esto es una característica intrínseca del propio motor), pero siempre es algo que tener en consideración.
 
 ## Recursos para aprender $\LaTeX$
-$\LaTeX$ es un lenguaje increíblemente potente, con funcionalidades que van desde la tipografía más simple hasta, bueno, hasta ser un lenguaje Turing-completo. Por tanto, existen guías de $\LaTeX$ para todos los niveles, aunque comenzar a usarlo es rápido y satisfactorio, y apenas en unas horas puede tenerse una base más o menos sólida sobre este. Algunos de los mejores libros y tutoriales sobre este ámbito son los siguientes:
-* [The Not So Short Introduction to LaTeX 2ε](https://tug.ctan.org/info/lshort/english/lshort.pdf) : Completísimo y gratis, una lectura esencial.
+$\LaTeX$ es un lenguaje increíblemente potente, con funcionalidades que van desde la tipografía más simple hasta, bueno, hasta ser un lenguaje Turing-completo. Por tanto, existen guías de $\LaTeX$ para todos los niveles, aunque comenzar a usarlo es rápido y satisfactorio, y apenas en unas horas puede tenerse una base más o menos sólida sobre este. Algunos libros y tutoriales destacados sobre este ámbito se listan a continuación:
+* [The Not So Short Introduction to LaTeX2ε](https://tug.ctan.org/info/lshort/english/lshort.pdf) : Completísimo y gratis, una lectura esencial.
 * [Learn LaTeX in 30 minutes](https://www.overleaf.com/learn/latex/Learn_LaTeX_in_30_minutes): Rápido y al grano, del propio Overleaf.
 * [Wikibooks: LaTeX](http://en.wikibooks.org/wiki/LaTeX): No está completo del todo, pero lo que hay es fenomenal.
 
@@ -104,7 +108,7 @@ Además, `RetoMatematico.cls` provee varios comandos que abstraen las distintas 
 
 **†** Existe además el entorno `cajaejercicio` que genera una caja de ejercicio sin ningún contenido en su interior.
 
-## El paquete `RetoExtra.sty`
+## El paquete RetoExtra
 
 Puede cargas algunas funciones y paquetes adicionales a través del módulo separado `RetoExtra`, tal que así:
 ```latex
