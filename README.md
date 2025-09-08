@@ -10,6 +10,8 @@ El código de este repositorio es aquel empleado para la elaboración de las sol
 
 Asimismo, la plantilla original - que constituye la inmensa mayoría del contenido de este paquete - es producto de él, mi trabajo solo ha sido su reorganización y la creación de archivos `.cls` y  `.sty` reutilizables y amigables para aquel poco versado en $\LaTeX$, o que simplemente busque mayor comodidad.
 
+RetoMatematico.cls, entre otras características, cambia las dimensiones del documento a papel *letter*, la fuente a *Palatino Linotype* - a través del paquete `mathpazos` - y coloca márgenes con el ISSN y el enlace del grupo. Para una vista más detallada, consulte el documento de ejemplo que puede encontrar en la sección *Releases*.
+
 # Cómo usar
 Primeramente, descargue la plantilla haciendo clic en el botón `Code` en la parte derecha arriba del contenido del repositorio y posteriormente `Download ZIP` (y luego descomprima el archivo `.zip` en una carpeta nueva), o en su defecto haga clic en el botón `Use this template`.
 
