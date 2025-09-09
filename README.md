@@ -15,7 +15,7 @@ RetoMatematico.cls, entre otras características, cambia las dimensiones del doc
 # Cómo usar
 Primeramente, descargue la plantilla haciendo clic en el botón `Code` en la parte derecha arriba del contenido del repositorio y posteriormente `Download ZIP` (y luego descomprima el archivo `.zip` en una carpeta nueva), o en su defecto haga clic en el botón `Use this template`.
 
-Un ejemplo mínimo funcional se encuentra en el archivo `main.tex`, luego basta eliminar las líneas $13\text{-}71$ y comenzar a escribir.
+Un ejemplo mínimo funcional se encuentra en el archivo `main.tex`, luego basta eliminar las líneas $13\text{-}149$ y comenzar a escribir.
 
 ## Parámetros
 La clase `RetoMatematico` puede ser llamada con tres parámetros distintos:
@@ -100,6 +100,7 @@ Las definiciones del mismo son las siguientes:
 * Paquete `xfrac`: Fracciones oblicuas.
 * Paquete `natbib`: Gran soporte para bibliografías
 * Paquete `lipsum`: El conocido "lorem ipsum dolor sit amen".
+* Paquete `siunitx`: Permite una mejor tipografía de magnitudes y unidades.
 
 ### Símbolos y fuentes
 * Paquete `upgreek`: Letras griegas no italizadas.
@@ -111,13 +112,19 @@ Las definiciones del mismo son las siguientes:
 * Comando `\stretchint{⟨proporción⟩}`: Alargar (sin engordar) una integral.
 
 ### Gráficos
-* Paquete `auto-pst-pdf`: Permite compilar PStricks con $\text{pdf}\LaTeX$.
 * Paquete `pgfplots`: Gráficos de funciones en 2D y 3D.
-* Paquete `pst-eucl`: Geometría euclídea con PSTricks.
-* Paquete `pstricks-add`: Parches varios a PSTricks.
+* Paquete `colortbl`: Colores en tablas.
+
+# Las clases RetoTikZ y RetoPSTricks
+
+Por último, para la creación de figuras mediante $\text{Ti}k{Z}$ y PSTricks se ponen a disposición del usuario las clases `RetoTikZ` y `RetoPSTricks` respectivamente, las cuales no toman ningún argumento y definen los estilos de los diagramas. Además, en el caso de esta última se definen también varias macros de utilidad:
+
 * Comando `\pstBarycenter{⟨A⟩}{⟨B⟩}{⟨C⟩}{⟨nombre⟩}`: Macro para hallar el baricentro de un triángulo $\triangle ABC$.
 * Comando `\pstcenter{⟨A⟩}{⟨B⟩}{⟨C⟩}{⟨D⟩}{⟨nombre⟩}`: Macro para hallar el centro de un cuadrilátero $ABCD$.
-* Paquete `colortbl`: Colores en tablas.
+
+Un ejemplo se encuentra en la carpeta [imágenes](imagenes/ejemplo-pstricks.tex).
+
+> **Nota:** Las figuras que se quieran incluir en el documento final probablemente hayan de ser creadas en archivos separados para posteriormente incluir el PDF resultante en el principal.
 
 <br>
 <br>

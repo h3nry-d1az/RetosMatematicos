@@ -39,7 +39,7 @@
     pdfkeywords={\ProblemaPalabrasClave},
     pdfauthor={\ProblemaAutor},
     colorlinks,
-    allcolors=gray,
+    allcolors=black,
 %   hyperindex,
     breaklinks=true
 }
@@ -79,20 +79,20 @@
 \ifnum\value{page}=1
 \begin{tikzpicture}[remember picture,overlay]
 	\node[font=\sffamily,anchor=east,
-	xshift=-0.45cm,yshift=7.21cm] at (current page.south east)
+	xshift=-0.45cm,yshift=5.5cm] at (current page.south east)
 	{\parbox{5mm}{\color{verdeodi!40}\sf\footnotesize\ccLogo\\ \ccAttribution\\ \ccNonCommercial\\\ccShareAlike}};
 	\node[font=\sffamily,anchor=east,
-	xshift=-0.32cm,yshift=5.81cm] at (current page.south east)
+	xshift=-0.32cm,yshift=4.1cm] at (current page.south east)
 	{\hypersetup{urlcolor=verdeodi!40}\qrcode[hyperlink, height=10mm]{https://n9.cl/tlg22}};
 	\node[font=\sffamily,anchor=west,
-	xshift=0.7cm,yshift=-3.94cm] at (current page.north west)
+	xshift=0.7cm,yshift=-5.6cm] at (current page.north west)
 	{\rotatebox{90}{\color{verdeodi!40}\footnotesize ISSN: 2952--0746}};
 \end{tikzpicture}
 \else
 \begin{tikzpicture}[remember picture,overlay]
-	\node[font=\sffamily] at ([shift={(9.8,-18.26)}]current page.north)
+	\node[font=\sffamily] at ([shift={(9.8,-20.1)}]current page.north)
 	{\color{verdeodi!30} \rotatebox{270}{\sf {\raggedleft \footnotesize \ccLogo\,\ccAttribution\,\ccNonCommercial\,\ccShareAlike{} \href{https://t.me/Retos_Matematicos}{\color{verdeodi!30} Retos Matemáticos: https:/\!/t.me/Retos\_Matematicos}}}};
-	\node[font=\sffamily] at ([shift={(-10,-4.51)}]current page.north)
+	\node[font=\sffamily,anchor=north] at ([shift={(-9.8,-3.51)}]current page.north)
 	{\color{verdeodi!30}\rotatebox{90}{\sf{\raggedleft \footnotesize ISSN: 2952--0746; \ProblemaFecha}}};
 \end{tikzpicture}
 \fi
