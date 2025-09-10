@@ -129,4 +129,4 @@ Un ejemplo se encuentra en la carpeta [imágenes](imagenes/ejemplo-pstricks.tex)
 <br>
 <br>
 
-*Licenciado bajo Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International*
+*Licenciado bajo Creative Commons Attribution-ShareAlike 4.0 International*

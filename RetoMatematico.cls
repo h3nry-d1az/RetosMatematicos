@@ -35,7 +35,7 @@
 \RequirePackage{hyperref}
 \hypersetup{
     pdftitle={Reto matemático: \ProblemaFecha},
-    pdfsubject={Licenciado bajo Creative Commons Attribution Non Commercial Share Alike 4.0 International},
+    pdfsubject={Licenciado bajo Creative Commons Attribution Share Alike 4.0 International},
     pdfkeywords={\ProblemaPalabrasClave},
     pdfauthor={\ProblemaAutor},
     colorlinks,
