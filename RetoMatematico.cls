@@ -1,7 +1,7 @@
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesClass{RetoMatematico}[2025/09/04 Plantilla de LaTeX del grupo de Telegram "Retos Matemáticos".]
 
-%%%%% Tamaño A4, con fuente de 11 pt. y con los números de ecuaciones a la derecha
+%%%%% Tamaño letter, con fuente de 11 pt. y con los números de ecuaciones a la derecha
 \LoadClass[letter,11pt,reqno]{article}
 
 \RequirePackage[utf8]{inputenc}
@@ -85,7 +85,7 @@
 	xshift=-0.32cm,yshift=4.1cm] at (current page.south east)
 	{\hypersetup{urlcolor=verdeodi!40}\qrcode[hyperlink, height=10mm]{https://n9.cl/tlg22}};
 	\node[font=\sffamily,anchor=west,
-	xshift=0.7cm,yshift=-5.6cm] at (current page.north west)
+	xshift=0.7cm,yshift=-5.8cm] at (current page.north west)
 	{\rotatebox{90}{\color{verdeodi!40}\footnotesize ISSN: 2952--0746}};
 \end{tikzpicture}
 \else
