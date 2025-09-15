@@ -85,7 +85,7 @@
 	xshift=-0.32cm,yshift=4.1cm] at (current page.south east)
 	{\hypersetup{urlcolor=verdeodi!40}\qrcode[hyperlink, height=10mm]{https://n9.cl/tlg22}};
 	\node[font=\sffamily,anchor=west,
-	xshift=0.7cm,yshift=-5.8cm] at (current page.north west)
+	xshift=0.7cm,yshift=-5.7cm] at (current page.north west)
 	{\rotatebox{90}{\color{verdeodi!40}\footnotesize ISSN: 2952--0746}};
 \end{tikzpicture}
 \else
