@@ -1,7 +1,7 @@
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesClass{RetoMatematico}[2025/09/04 Plantilla de LaTeX del grupo de Telegram "Retos Matemáticos".]
 
-%%%%% Tamaño A4, con fuente de 11 pt. y con los números de ecuaciones a la derecha
+%%%%% Tamaño letter, con fuente de 11 pt. y con los números de ecuaciones a la derecha
 \LoadClass[letter,11pt,reqno]{article}
 
 \RequirePackage[utf8]{inputenc}
@@ -85,12 +85,12 @@
 	xshift=-0.32cm,yshift=4.1cm] at (current page.south east)
 	{\hypersetup{urlcolor=verdeodi!40}\qrcode[hyperlink, height=10mm]{https://n9.cl/tlg22}};
 	\node[font=\sffamily,anchor=west,
-	xshift=0.7cm,yshift=-5.6cm] at (current page.north west)
+	xshift=0.7cm,yshift=-5.8cm] at (current page.north west)
 	{\rotatebox{90}{\color{verdeodi!40}\footnotesize ISSN: 2952--0746}};
 \end{tikzpicture}
 \else
 \begin{tikzpicture}[remember picture,overlay]
-	\node[font=\sffamily] at ([shift={(9.8,-20.1)}]current page.north)
+	\node[font=\sffamily] at ([shift={(9.8,-19.85)}]current page.north)
 	{\color{verdeodi!30} \rotatebox{270}{\sf {\raggedleft \footnotesize \ccLogo\,\ccAttribution\,\ccNonCommercial\,\ccShareAlike{} \href{https://t.me/Retos_Matematicos}{\color{verdeodi!30} Retos Matemáticos: https:/\!/t.me/Retos\_Matematicos}}}};
 	\node[font=\sffamily,anchor=north] at ([shift={(-9.8,-3.51)}]current page.north)
 	{\color{verdeodi!30}\rotatebox{90}{\sf{\raggedleft \footnotesize ISSN: 2952--0746; \ProblemaFecha}}};
