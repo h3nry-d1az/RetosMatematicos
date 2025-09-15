@@ -2,7 +2,7 @@
 \ProvidesClass{RetoPSTricks}[2025/09/09 Clase para la creación de gráficos externos con PSTricks. Suplemento a RetoMatematico.cls]
 % CLASE PARA INCLUIR GRÁFICOS EXTERNOS CREADOS CON PSTricks
 
-\LoadClass[border=1mm]{standalone}
+\LoadClass[border=0mm]{standalone}
 
 \RequirePackage{auto-pst-pdf}
 \RequirePackage{pst-eucl} % Geometría euclídea con PSTricks
