@@ -90,7 +90,7 @@
 \end{tikzpicture}
 \else
 \begin{tikzpicture}[remember picture,overlay]
-	\node[font=\sffamily] at ([shift={(9.8,-20.1)}]current page.north)
+	\node[font=\sffamily] at ([shift={(9.8,-19.85)}]current page.north)
 	{\color{verdeodi!30} \rotatebox{270}{\sf {\raggedleft \footnotesize \ccLogo\,\ccAttribution\,\ccNonCommercial\,\ccShareAlike{} \href{https://t.me/Retos_Matematicos}{\color{verdeodi!30} Retos Matemáticos: https:/\!/t.me/Retos\_Matematicos}}}};
 	\node[font=\sffamily,anchor=north] at ([shift={(-9.8,-3.51)}]current page.north)
 	{\color{verdeodi!30}\rotatebox{90}{\sf{\raggedleft \footnotesize ISSN: 2952--0746; \ProblemaFecha}}};
