@@ -13,7 +13,7 @@ Asimismo, la plantilla original - que constituye la inmensa mayoría del conteni
 RetoMatematico.cls, entre otras características, cambia las dimensiones del documento a papel *letter*, la fuente a *Palatino Linotype* - a través del paquete `mathpazos` - y coloca márgenes con el ISSN y el enlace del grupo. Para una vista más detallada, consulte el documento de ejemplo que puede encontrar en la sección *Releases*.
 
 # Cómo usar
-Primeramente, descargue la plantilla haciendo clic en el botón `Code` en la parte derecha arriba del contenido del repositorio y posteriormente `Download ZIP` (y luego descomprima el archivo `.zip` en una carpeta nueva), o en su defecto haga clic en el botón `Use this template`. Alternativamente, también puede obtenerla del [repositorio de CTAN del paquete](https://ctan.org/tex-archive/macros/latex/contrib/retosmatematicos).
+Primeramente, descargue la plantilla haciendo clic en el botón `Code` en la parte derecha arriba del contenido del repositorio y posteriormente `Download ZIP` (y luego descomprima el archivo `.zip` en una carpeta nueva), o en su defecto haga clic en el botón `Use this template`. Alternativamente, también puede obtenerla del [repositorio de CTAN del paquete](https://ctan.org/pkg/retosmatematicos).
 
 Un ejemplo mínimo funcional se encuentra en el archivo `main.tex`, luego basta eliminar las líneas $13\text{-}149$ y comenzar a escribir.
 
