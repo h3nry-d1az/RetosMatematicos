@@ -148,7 +148,7 @@
 
 \newcommand{\resolutores}[1]{
 \vspace{3mm}
-\noindent {\color{verdeodi}\sf Resuelto por {#1}\!\!.}
+\noindent {\color{verdeodi}\sf Resuelto por {#1}.}
 }
 
 %%%%% Pies de figuras y tablas
