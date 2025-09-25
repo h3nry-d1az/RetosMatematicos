@@ -4,7 +4,7 @@
 
 \LoadClass[border=0mm]{standalone}
 
-\RequirePackage{auto-pst-pdf}
+\RequirePackage[crop=off]{auto-pst-pdf}
 \RequirePackage{pst-eucl} % Geometría euclídea con PSTricks
 \RequirePackage{pstricks-add} % Parches varios a PSTricks
 % Macro para hallar el baricentro de un triángulo ABC
